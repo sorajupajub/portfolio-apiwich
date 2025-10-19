@@ -1,0 +1,182 @@
+/* style.css */
+/* ==== Design Tokens =================================================== */
+:root {
+  --bg: #0b0f14;
+  --bg-soft: #121822;
+  --text: #e8eef7;
+  --muted: #9fb0c6;
+  --brand: #7c3aed; /* purple */
+  --brand-2: #22d3ee; /* cyan accent */
+  --card: #0f1621;
+  --border: #233043;
+  --ok: #10b981;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 18px;
+}
+[data-theme="light"] {
+  --bg: #f6f8fb;
+  --bg-soft: #eef2f9;
+  --text: #0b1220;
+  --muted: #4b5563;
+  --brand: #7c3aed;
+  --brand-2: #0891b2;
+  --card: #ffffff;
+  --border: #d7dce5;
+  --shadow: 0 10px 30px rgba(2,6,23,.08);
+}
+
+/* ==== Base ============================================================ */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Thai", "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(124, 58, 237, .15), transparent 60%),
+              radial-gradient(900px 400px at 10% 0%, rgba(34, 211, 238, .12), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+img, video { max-width: 100%; display: block; border-radius: calc(var(--radius) - 6px); }
+
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.chip { display:inline-flex; align-items:center; gap:.5rem; padding:.45rem .75rem; border:1px solid var(--border); border-radius:999px; background: color-mix(in oklab, var(--card) 85%, transparent); }
+.btn { display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.1rem; border:1px solid var(--border); border-radius: 12px; background: linear-gradient(180deg, color-mix(in oklab, var(--card) 80%, transparent), var(--card)); cursor:pointer; transition: transform .08s ease, box-shadow .2s ease; box-shadow: var(--shadow); }
+.btn:hover { transform: translateY(-2px); }
+.btn.primary { background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 35%, var(--card)), var(--card)); border-color: color-mix(in srgb, var(--brand) 50%, var(--border)); }
+.btn.ghost { background: transparent; box-shadow: none; }
+.muted { color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+.pill { padding:.25rem .6rem; border-radius: 999px; border:1px dashed var(--border); font-size:.8rem; color: var(--muted); }
+.grid { display: grid; gap: 1.1rem; }
+.grid.col-3 { grid-template-columns: repeat(3, 1fr); }
+.grid.auto { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.pad { padding:1.1rem; }
+.top-gap { margin-top:.6rem; }
+.row-gap { display:flex; gap:.6rem; flex-wrap:wrap; }
+.center-items { align-items:center; }
+.tight { margin:0; }
+.accent { color: var(--brand-2); }
+
+/* Navbar ติดบนสุดตลอดเวลา */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; 
+  backdrop-filter: saturate(120%) blur(12px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+gapgapgapgap
+/* เว้นระยะให้เนื้อหาไม่ให้Navbarทับ */
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Thai", "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(124, 58, 237, .15), transparent 60%),
+              radial-gradient(900px 400px at 10% 0%, rgba(34, 211, 238, .12), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: 90px; /*ตามความสูงจริงของ navbar (ถ้ายังบังให้เพิ่มเป็น 88–96px) */
+}
+
+/* โครง nav (ของคุณใช้แล้ว) */
+nav { display:flex; align-items:center; justify-content:space-between; padding: .7rem 0; }
+.nav-left { display:flex; align-items:center; gap:.8rem; }
+.logo { width:36px; height:36px; border-radius:10px; display:grid; place-items:center; background: linear-gradient(135deg, var(--brand), var(--brand-2)); font-weight:700; }
+.nav-links { display:flex; gap:.9rem; flex-wrap:wrap; }
+.nav-links a { padding:.45rem .7rem; border-radius:10px; border:1px solid transparent; }
+.nav-links a:hover { border-color: var(--border); background: color-mix(in oklab, var(--card) 70%, transparent); }
+
+/* ==== Hero ============================================================ */
+.hero { display:grid; grid-template-columns: 1.2fr .8fr; align-items:center; gap:1.6rem; padding: 2.2rem 0 1.2rem; }
+.hero h1 { font-size: clamp(1.8rem, 2.6vw + 1rem, 3rem); line-height:1.15; margin: .4rem 0; }
+.hero p { font-size: 1.05rem; color: var(--muted); margin: .4rem 0 1rem; }
+.hero .actions { display:flex; gap:.8rem; flex-wrap: wrap; }
+.hero { 
+  margin-top: 80px; /* 👈 เลื่อนลงจาก navbar */
+}
+.media { position: relative; }
+.media .badge { position:absolute; right:.8rem; top:.8rem; }
+.media video, .media iframe { width:100%; aspect-ratio: 16/9; object-fit: cover; border:1px solid var(--border); }
+
+/* ==== Sections ======================================================== */
+section { padding: 2.8rem 0; }
+section h2 { font-size: 1.6rem; margin: 0 0 1.2rem; }
+
+/* About */
+.about { display:grid; grid-template-columns: .9fr 1.1fr; gap:1.5rem;   }
+
+/* แกลเลอรีรูปภาพในส่วนเกี่ยวกับฉัน */
+.about-gallery {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.about-gallery img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.about-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.about-private-gallery {
+  margin-top: 1rem;
+}
+.about-private-gallery img {
+  width: 100%;
+  height: 450px;   
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+
+/* Education */
+.table-wrap { overflow:auto; }
+table { width:100%; border-collapse: collapse; }
+th, td { border: 1px solid var(--border); padding:.75rem .8rem; text-align:left; }
+th { background: color-mix(in oklab, var(--card) 80%, var(--bg)); }
+tr:hover td { background: color-mix(in oklab, var(--bg-soft) 85%, transparent); }
+
+/* Skills */
+.skill { display:grid; gap:.35rem; }
+.bar { height:10px; background: color-mix(in oklab, var(--bg-soft) 80%, transparent); border-radius:999px; overflow:hidden; border:1px solid var(--border); }
+.bar > span { display:block; height:100%; background: linear-gradient(90deg, var(--brand), var(--brand-2)); width: 0; transition: width 1s ease; }
+
+
+/* Contact */
+form { display:grid; gap:.8rem; }
+input, textarea { width:100%; padding:.8rem .9rem; border-radius:12px; border:1px solid var(--border); background: var(--bg-soft); color: var(--text); }
+textarea { min-height:120px; }
+.form-row { display:grid; grid-template-columns: 1fr 1fr; gap:.8rem; }
+
+/* Footer */
+footer { padding: 1.8rem 0 3rem; color: var(--muted); border-top:1px solid var(--border); }
+.footer-wrap { display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; }
+.socials { display:flex; gap:.6rem; align-items:center; }
+
+/* Utilities */
+.kicker { letter-spacing:.15em; text-transform:uppercase; font-size:.75rem; color: var(--brand-2); font-weight:700; }
+.spacer { height: 1rem; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}

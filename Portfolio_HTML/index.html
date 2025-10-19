@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio | APIWICH</title>
+  <meta name="description" content="แฟ้มสะสมผลงาน (Portfolio) แบบหน้าเดียว สร้างด้วย HTML, CSS และ JavaScript" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ======================= Header & Navigation ======================= -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="nav-left">
+          <div class="logo" aria-hidden="true">SO</div>
+          <div>
+            <div class="kicker">Portfolio</div>
+            <strong>อภิวิชญ์ ดุษฎี</strong>
+          </div>
+        </div>
+        <div class="nav-links" role="navigation">
+          <a href="#about">เกี่ยวกับ</a>
+          <a href="#education">การศึกษา</a>
+          <a href="#skills">ทักษะ</a>
+          <a href="#contact">ติดต่อ</a>
+          <button id="themeToggle" class="btn ghost" aria-label="สลับโหมดสี">🌓</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============================== Hero ============================== -->
+  <div class="container">
+    <section class="hero">
+      <div>
+        <h1>สวัสดีครับ ผมชื่อ <span class="accent">[อภิวิชญ์]</span> — นักศึกษาวิทยาการคอมมหาวิทยาลัยศรีปทุม</h1>
+        <p>ตอนนี้อยู่ชั้นปีที่1 สาขาวิทยาการคอมพิวเตอร์ แบบfullstack ชื่อเล่นชื่อโซระครับแต่เพื่อนๆชอบเรียกว่าโซ เวลาว่างชอบออกกำลังกายและเล่นเกม</p>
+        <div class="spacer"></div>
+      </div>
+
+      <div class="media">
+        <div class="badge pill">🎬 คลิปแนะนำตัว</div>
+        <!-- วิธีที่ 1: วิดีโอไฟล์ของตัวเอง -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ap1a84yPy0E?si=hK9dmNqvuwM4hLcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          
+        
+        <!-- วิธีที่ 2 (ทางเลือก): ฝัง YouTube (แทน video ด้านบนได้เลย) -->
+        <!--
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        -->
+      </div>
+    </section>
+  </div>
+
+  <!-- =============================== About ============================= -->
+  <div class="container">
+    <section id="about" class="about">
+      <div class="card pad">
+        <h2>เกี่ยวกับฉัน</h2>
+        <div class="about-gallery">
+          <img src="assets/pro1.jpg" alt="" />
+        </div>
+        <p>ผมเป็นนักศึกษาวิทยาการคอมพิวเตอร์ที่ชอบงานพัฒนาเว็บ  มีประสบการณ์ทำงานพาร์ทไทม์ช่วยทำเว็บไซต์ให้บริษัทวอลเปเปอร์แห่งหนึ่ง ชอบที่จะเรียนรู้และพัฒนาตนเองอยู่เสมอ</p>
+        <ul>
+          <li>สนใจ: Frontend Dev, UX/UI,</li>
+          <li>จุดแข็ง: เรียนรู้ไว, สื่อสารชัดเจน, ทำงานเป็นทีม</li>
+          <li>ภาษาที่สื่อสารได้: ไทย ,อังกฤษ </li>
+        </ul>
+        <div class="grid col-3 top-gap">
+          <div class="chip">📍 อยู่ที่: นนทบุรี</div>
+          <div class="chip">🎓 การศึกษา: ปริญญาตรี</div>
+          <div class="chip">💼 กำลังหางาน</div>
+        </div>
+      </div>
+      <div class="card pad">
+        <h2>ข้อมูลส่วนตัว</h2>
+        <ul class="tight">
+          <li><strong>ชื่อ-นามสกุล:</strong> อภิวิชญ์ ดุษฎี</li>
+          <li><strong>วันเกิด:</strong> 23 ส.ค. 2003</li>
+          <li><strong>อีเมล:</strong> apiwich.dus@spumail.net</li>
+          <li><strong>โทร:</strong> 062-216-3080</li>
+          <li><strong>LinkedIn:</strong> www.linkedin.com/in/apiwich-dussadee-55798220b</li>
+          <li><strong>GitHub:</strong> ลิงก์ของคุณ</li>
+        </ul>
+        <div class="about-private-gallery">
+          <img src="assets/skys.jpg" alt="" />
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================ Education ============================ -->
+  <div class="container">
+    <section id="education">
+      <h2>ประวัติการศึกษา</h2>
+      <div class="card pad">
+        <div class="table-wrap">
+          <table aria-label="ตารางประวัติการศึกษา">
+            <thead>
+              <tr>
+                <th>ปีการศึกษา</th>
+                <th>สถาบัน</th>
+                <th>วุฒิการศึกษา</th>
+                <th>สาขา</th>
+                <th>ผลงาน/กิจกรรมเด่น</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2566 - ปัจจุบัน</td>
+                <td>มหาวิทยาลัยศรีปทุม</td>
+                <td>ปริญญาตรี</td>
+                <td>วิทยาการคอมพิวเตอร์</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>2563 - 2565</td>
+                <td>โรงเรียนชั้นมัธยม</td>
+                <td>ม.ปลาย</td>
+                <td>วิทย์–คณิต </td>
+                <td>ชมรมคอมพิวเตอร์</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================= Skills ============================== -->
+  <div class="container">
+    <section id="skills">
+      <h2>ทักษะ</h2>
+      <div class="grid auto">
+        <div class="card pad">
+          <h3>Frontend</h3>
+          <div class="skill"><label>HTML</label><div class="bar"><span data-pct="70"></span></div></div>
+          <div class="skill"><label>CSS</label><div class="bar"><span data-pct="70"></span></div></div>
+          <div class="skill"><label>JavaScript</label><div class="bar"><span data-pct="60"></span></div></div>
+        </div>
+        <div class="card pad">
+          <h3>Design & Tools</h3>
+          <div class="skill"><label>Figma</label><div class="bar"><span data-pct="80"></span></div></div>
+          <div class="skill"><label>Git/GitHub</label><div class="bar"><span data-pct="70"></span></div></div>
+          <div class="skill"><label>Canva</label><div class="bar"><span data-pct="100"></span></div></div>
+        </div>
+        <div class="card pad">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>สื่อสารและพรีเซนต์งาน</li>
+            <li>ทำงานร่วมกับทีม</li>
+            <li>แก้ปัญหาเชิงตรรกะ</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ============================= Contact ============================= -->
+  <div class="container">
+    <section id="contact">
+      <h2>ติดต่อฉัน</h2>
+      <div class="card pad">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div>
+              <label for="name">ชื่อ <span aria-hidden="true" class="muted">*</span></label>
+              <input id="name" name="name" placeholder="ชื่อจริง" required />
+            </div>
+            <div>
+              <label for="email">อีเมล <span aria-hidden="true" class="muted">*</span></label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div>
+            <label for="message">ข้อความ</label>
+            <textarea id="message" name="message" placeholder="สวัสดีครับ/ค่ะ ..."></textarea>
+          </div>
+          <div class="row-gap center-items">
+            <button class="btn primary" type="submit">ส่งข้อความ</button>
+            <span id="formStatus" class="muted" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- =============================== Footer ============================ -->
+  <div class="container">
+    <footer>
+      <div class="footer-wrap">
+        <div>© <span id="year"></span> APIWICH — create by HTML • CSS • JS</div>
+        <div class="socials">
+       
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
