@@ -101,9 +101,15 @@ nav { display:flex; align-items:center; justify-content:space-between; padding: 
 .hero { 
   margin-top: 80px; /* 👈 เลื่อนลงจาก navbar */
 }
-.media { position: relative; }
+.media { position: relative; width: 100%;display: flex;justify-content: center;align-items: center; }
 .media .badge { position:absolute; right:.8rem; top:.8rem; }
-.media video, .media iframe { width:100%; aspect-ratio: 16/9; object-fit: cover; border:1px solid var(--border); }
+.media video, .media iframe { width: 100%;             /* ให้ยืดเต็มกล่อง */
+  height: 250px;            /* ปรับสัดส่วนอัตโนมัติ */
+  max-height: 300px;       /* จำกัดความสูงสูงสุด */
+  object-fit: contain;     /* ปรับให้วิดีโอไม่ถูกครอบ */
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  display: block;}
 
 /* ==== Sections ======================================================== */
 section { padding: 2.8rem 0; }
@@ -180,3 +186,4 @@ footer { padding: 1.8rem 0 3rem; color: var(--muted); border-top:1px solid var(-
   .about { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
+
